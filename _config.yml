@@ -11,12 +11,12 @@ defaults:
     path: ''
     type: posts
   values:
-    permalink: "/blog/:title/"
+    permalink: "/:title/"
     layout: post
     author:
 
 # Jekyll
-permalink:          /blog/:title/
+permalink:          /:title/
 markdown:           kramdown
 highlighter:        rouge
 kramdown:
@@ -35,15 +35,15 @@ disqus_shortname:   default
 
 # Social
 analytics-id:       "default"
-twitter:            default
-facebook:           default
-instagram:          default
-github:             default
+twitter:            confus3r
+facebook:           profile.php?id=100008014564279
+instagram:          ggs2r00t
+github:             sqrtrev
 
 # personal
-location:           Los Angeles, CA
-phone:              310-318-5555
-email:              info@default.com
+location:           Incheon, Korea
+phone:              NULL! This is Private
+email:              me@vuln.live
 
 # Gems
 gems:
@@ -54,7 +54,7 @@ gems:
   - jekyll-paginate
 
 paginate: 6
-paginate_path: "/blog/page:num/"
+paginate_path: "/page:num/"
 
 jekyll-mentions:
     base_url: https://github.com
