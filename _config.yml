@@ -1,8 +1,8 @@
 # Site
-title:              Massively
+title:              SQRTREV
 bio:                'Jekyll version of the Massively theme by HTML5UP'
 description:        "sqrtrev Github Page"
-locale:             en_US
+locale:             ko_KR
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 
