@@ -31,9 +31,9 @@ if ( v3 == 97 && !strncmp(&v4, a5y, 2u) && !strcmp(&v5, aR3versing) && String ==
 v3가 97(ASCII로 a), v4가 변수 a5y, v5가 변수 aR3versing, String이 69(ASCII로 E)라는 조건을 가지고 있는 if문이다.
 <br>
 그러면 a5y와 aR3versing에는 어떤 값이 저장되어있는지 확인해보자.<br><br>
-<img src="../images/post1_ (3).png" style="width:100%;"/>
+<img src="https://raw.githubusercontent.com/sqrtrev/sqrtrev.github.io/master/images/post1_%20(3).PNG" style="width:100%;"/>
 aR3versing에는 R3versing이라는 값이, a5y에는 5y라는 값이 저장되어있다.<br>
-위 내용을 기반으로 값들을 조합하면 Password가 나오게된다.
+위 내용을 기반으로 값들을 조합하면 Password가 나오게된다.<br>
 <img src="../images/post1_ (4).png" style="width:100%"/>
 Clear!
 <br>
