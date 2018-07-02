@@ -31,7 +31,7 @@ sass:
   style:            compressed
 
 # Comments
-disqus_shortname:   default
+disqus_shortname:   sqrtrev
 
 # Social
 analytics-id:       "default"

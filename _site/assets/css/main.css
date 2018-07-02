@@ -1,5 +1,6 @@
 @import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900");
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 /*
 	Massively by HTML5 UP
@@ -1672,7 +1673,7 @@
 	}
 
 	body, input, select, textarea {
-		font-family: "Merriweather", Georgia, serif;
+		font-family: "Merriweather","Nanum Gothic", Georgia, serif;
 		font-weight: 300;
 		font-size: 1rem;
 		line-height: 2.375;
@@ -1705,7 +1706,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-family: "Source Sans Pro","Nanum Gothic", Helvetica, sans-serif;
 		font-weight: 900;
 		line-height: 1.5;
 		letter-spacing: 0.075em;
@@ -1769,7 +1770,7 @@
 
 	code {
 		border: solid 2px;
-		font-family: "Courier New", monospace;
+		font-family: "Courier New","Nanum Gothic", monospace;
 		font-size: 0.9rem;
 		margin: 0 0.25rem;
 		padding: 0.25rem 0.65rem;
@@ -1777,7 +1778,7 @@
 
 	pre {
 		-webkit-overflow-scrolling: touch;
-		font-family: "Courier New", monospace;
+		font-family: "Courier New","Nanum Gothic", monospace;
 		font-size: 0.9rem;
 		margin: 0 0 2rem 0;
 	}
@@ -1888,7 +1889,7 @@
 		border: 0;
 		cursor: pointer;
 		display: inline-block;
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-family: "Source Sans Pro","Nanum Gothic", Helvetica, sans-serif;
 		font-size: 0.8rem;
 		font-weight: 900;
 		letter-spacing: 0.075em;
@@ -2149,7 +2150,7 @@
 
 	label {
 		display: block;
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-family: "Source Sans Pro","Nanum Gothic", Helvetica, sans-serif;
 		font-weight: 900;
 		line-height: 1.5;
 		letter-spacing: 0.075em;
@@ -2258,7 +2259,7 @@
 			display: inline-block;
 			font-size: 1rem;
 			letter-spacing: 0;
-			font-family: "Merriweather", Georgia, serif;
+			font-family: "Merriweather","Nanum Gothic", Georgia, serif;
 			text-transform: none;
 			font-weight: 300;
 			padding-left: 2.8rem;
@@ -2827,7 +2828,7 @@
 		}
 
 		table th {
-			font-family: "Source Sans Pro", Helvetica, sans-serif;
+			font-family: "Source Sans Pro","Nanum Gothic", Helvetica, sans-serif;
 			font-size: 0.8rem;
 			font-weight: 900;
 			letter-spacing: 0.075em;
@@ -2924,7 +2925,7 @@
 			transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
 			border: solid 2px;
 			display: inline-block;
-			font-family: "Source Sans Pro", Helvetica, sans-serif;
+			font-family: "Source Sans Pro","Nanum Gothic", Helvetica, sans-serif;
 			font-size: 0.8rem;
 			font-weight: 900;
 			height: 3rem;
@@ -3373,7 +3374,7 @@
 			border-style: solid;
 			border-color: #ffffff;
 			border-width: 5px !important;
-			font-family: "Source Sans Pro", Helvetica, sans-serif;
+			font-family: "Source Sans Pro","Nanum Gothic", Helvetica, sans-serif;
 			font-size: 2.25rem;
 			font-weight: 900;
 			letter-spacing: 0.075em;
@@ -3498,7 +3499,7 @@
 			-webkit-flex-shrink: 1;
 			-ms-flex-shrink: 1;
 			flex-shrink: 1;
-			font-family: "Source Sans Pro", Helvetica, sans-serif;
+			font-family: "Source Sans Pro","Nanum Gothic", Helvetica, sans-serif;
 			font-weight: 900;
 			letter-spacing: 0.075em;
 			list-style: none;
@@ -4189,7 +4190,7 @@
 		position: relative;
 		color: rgba(255, 255, 255, 0.25);
 		cursor: default;
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-family: "Source Sans Pro","Nanum Gothic", Helvetica, sans-serif;
 		font-size: 0.8rem;
 		font-weight: 900;
 		letter-spacing: 0.075em;
@@ -4299,7 +4300,7 @@
 		right: 0.75rem;
 		border: 0;
 		color: #ffffff;
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-family: "Source Sans Pro","Nanum Gothic", Helvetica, sans-serif;
 		font-size: 0.9rem;
 		font-weight: 900;
 		letter-spacing: 0.075em;
@@ -4387,7 +4388,7 @@
 				#navPanel .links li a {
 					border-bottom: 0;
 					display: block;
-					font-family: "Source Sans Pro", Helvetica, sans-serif;
+					font-family: "Source Sans Pro","Nanum Gothic", Helvetica, sans-serif;
 					font-size: 0.9rem;
 					font-size: 0.9rem;
 					font-weight: 900;

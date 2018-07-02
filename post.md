@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: posts
 title: list of posts
 description: NULL
 sitemap:

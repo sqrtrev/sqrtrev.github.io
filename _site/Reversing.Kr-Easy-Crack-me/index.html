@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-<title>Test</title>
+<title>[Reversing.kr] Easy Crack</title>
 <meta name="description" content="">
 
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
@@ -60,13 +60,46 @@
           <section class="post">
     				<header class="major">
       				<span class="date">02 Jul 2018</span>
-      				<h1>Test</h1>
-      				<p>Explain</p>
+      				<h1>[Reversing.kr] Easy Crack</h1>
+      				<p>Reversing.kr 1번</p>
       			</header>
-      			<div class="image main"><img src="/images/pic02.jpg" alt=""></div>
+      			<div class="image main"><img src="/images/post1_%20(1).png" alt=""></div>
       			<p></p>
-<h1 id="test">TEST</h1>
-<p><code class="highlighter-rouge">Hello world!</code></p>
+<h3 id="easy_crackmeexe-실행화면">Easy_CrackMe.exe 실행화면</h3>
+<p><br><br>
+프로그램을 실행해보면 무언가 값을 입력 가능하고, 확인 버튼을 누르면 Incorrect Password라는 문구를 띄운다.<br>아마도 이 문제의 정답은 저 패스워드를 구하는게 아닐까?<br>바로 IDA로 열어보자.<br><br></p>
+
+<p><img src="../images/post1_%20(2).png" style="width:100%;">
+<br>
+sub_401080을 열어보면 아래와 같이 변수가 선언되어있다.
+<br></p>
+<div class="highlighter-rouge">
+<pre class="highlight"><code>int result;
+CHAR String; // [sp+4h]
+char v3; // [sp+5h]
+char v4; // [sp+6h]
+char v5; // [sp+8h]
+__int16 v6;
+char v7;
+</code></pre>
+</div>
+<p>쉽게 말해서 스택을 표현하자면 아래와 같이 구성된다.<br>
+<code class="highlighter-rouge">string | v3 | v4 | v5</code><br><br>
+다음은 16번째 줄의 if문을 보자<br></p>
+<div class="highlighter-rouge">
+<pre class="highlight"><code>if ( v3 == 97 &amp;&amp; !strncmp(&amp;v4, a5y, 2u) &amp;&amp; !strcmp(&amp;v5, aR3versing) &amp;&amp; String == 69 )
+</code></pre>
+</div>
+<p>v3가 97(ASCII로 a), v4가 변수 a5y, v5가 변수 aR3versing, String이 69(ASCII로 E)라는 조건을 가지고 있는 if문이다.
+<br>
+그러면 a5y와 aR3versing에는 어떤 값이 저장되어있는지 확인해보자.<br><br>
+<img src="../images/post1_%20(3).png" style="width:100%;">
+aR3versing에는 R3versing이라는 값이, a5y에는 5y라는 값이 저장되어있다.<br>
+위 내용을 기반으로 값들을 조합하면 Password가 나오게된다.
+<img src="../images/post1_%20(4).png" style="width:100%">
+Clear!
+<br>
+키값은 따로 공유하지 않도록 하겠다.</p>
 
       		</section>
 
@@ -79,14 +112,14 @@
                */
 
               var disqus_config = function () {
-                  this.page.url = '/test/';  /*Replace PAGE_URL with your page's canonical URL variable*/
-                  this.page.identifier = '/test/'; /*Replace PAGE_IDENTIFIER with your page's unique identifier variable*/
+                  this.page.url = '/Reversing.Kr-Easy-Crack-me/';  /*Replace PAGE_URL with your page's canonical URL variable*/
+                  this.page.identifier = '/Reversing.Kr-Easy-Crack-me/'; /*Replace PAGE_IDENTIFIER with your page's unique identifier variable*/
               };
 
               (function() {  /* dont endit below this line */
                   var d = document, s = d.createElement('script');
 
-                  s.src = 'https://default.disqus.com/embed.js';
+                  s.src = 'https://sqrtrev.disqus.com/embed.js';
 
                   s.setAttribute('data-timestamp', +new Date());
                   (d.head || d.body).appendChild(s);

@@ -1,2 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-07-02T01:25:49+09:00</updated><id>/</id><title type="html">SQRTREV</title><subtitle>sqrtrev Github Page</subtitle><entry><title type="html">Test</title><link href="/test/" rel="alternate" type="text/html" title="Test" /><published>2018-07-02T00:00:00+09:00</published><updated>2018-07-02T00:00:00+09:00</updated><id>/test</id><content type="html" xml:base="/test/">&lt;h1 id=&quot;test&quot;&gt;TEST&lt;/h1&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Hello world!&lt;/code&gt;&lt;/p&gt;</content><summary type="html">Explain</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/images/pic02.jpg" /></entry></feed>
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-07-02T15:32:20+09:00</updated><id>/</id><title type="html">SQRTREV</title><subtitle>sqrtrev Github Page</subtitle><entry><title type="html">[Reversing.kr] Easy Crack</title><link href="/Reversing.Kr-Easy-Crack-me/" rel="alternate" type="text/html" title="[Reversing.kr] Easy Crack" /><published>2018-07-02T00:00:00+09:00</published><updated>2018-07-02T00:00:00+09:00</updated><id>/[Reversing.Kr] Easy Crack me</id><content type="html" xml:base="/Reversing.Kr-Easy-Crack-me/">&lt;h3 id=&quot;easy_crackmeexe-실행화면&quot;&gt;Easy_CrackMe.exe 실행화면&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+프로그램을 실행해보면 무언가 값을 입력 가능하고, 확인 버튼을 누르면 Incorrect Password라는 문구를 띄운다.&lt;br /&gt;아마도 이 문제의 정답은 저 패스워드를 구하는게 아닐까?&lt;br /&gt;바로 IDA로 열어보자.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../images/post1_ (2).png&quot; style=&quot;width:100%;&quot; /&gt;
+&lt;br /&gt;
+sub_401080을 열어보면 아래와 같이 변수가 선언되어있다.
+&lt;br /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int result;
+CHAR String; // [sp+4h]
+char v3; // [sp+5h]
+char v4; // [sp+6h]
+char v5; // [sp+8h]
+__int16 v6;
+char v7;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;쉽게 말해서 스택을 표현하자면 아래와 같이 구성된다.&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;string | v3 | v4 | v5&lt;/code&gt;&lt;br /&gt;&lt;br /&gt;
+다음은 16번째 줄의 if문을 보자&lt;br /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if ( v3 == 97 &amp;amp;&amp;amp; !strncmp(&amp;amp;v4, a5y, 2u) &amp;amp;&amp;amp; !strcmp(&amp;amp;v5, aR3versing) &amp;amp;&amp;amp; String == 69 )
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;v3가 97(ASCII로 a), v4가 변수 a5y, v5가 변수 aR3versing, String이 69(ASCII로 E)라는 조건을 가지고 있는 if문이다.
+&lt;br /&gt;
+그러면 a5y와 aR3versing에는 어떤 값이 저장되어있는지 확인해보자.&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;../images/post1_ (3).png&quot; style=&quot;width:100%;&quot; /&gt;
+aR3versing에는 R3versing이라는 값이, a5y에는 5y라는 값이 저장되어있다.&lt;br /&gt;
+위 내용을 기반으로 값들을 조합하면 Password가 나오게된다.
+&lt;img src=&quot;../images/post1_ (4).png&quot; style=&quot;width:100%&quot; /&gt;
+Clear!
+&lt;br /&gt;
+키값은 따로 공유하지 않도록 하겠다.&lt;/p&gt;</content><summary type="html">Reversing.kr 1번</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/images/post1_ (1).png" /></entry></feed>
