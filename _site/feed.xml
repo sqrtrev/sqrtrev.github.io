@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-07-02T15:32:20+09:00</updated><id>/</id><title type="html">SQRTREV</title><subtitle>sqrtrev Github Page</subtitle><entry><title type="html">[Reversing.kr] Easy Crack</title><link href="/Reversing.Kr-Easy-Crack-me/" rel="alternate" type="text/html" title="[Reversing.kr] Easy Crack" /><published>2018-07-02T00:00:00+09:00</published><updated>2018-07-02T00:00:00+09:00</updated><id>/[Reversing.Kr] Easy Crack me</id><content type="html" xml:base="/Reversing.Kr-Easy-Crack-me/">&lt;h3 id=&quot;easy_crackmeexe-실행화면&quot;&gt;Easy_CrackMe.exe 실행화면&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-07-02T15:42:47+09:00</updated><id>/</id><title type="html">SQRTREV</title><subtitle>sqrtrev Github Page</subtitle><entry><title type="html">[Reversing.kr] Easy Crack</title><link href="/Reversing.Kr-Easy-Crack-me/" rel="alternate" type="text/html" title="[Reversing.kr] Easy Crack" /><published>2018-07-02T00:00:00+09:00</published><updated>2018-07-02T00:00:00+09:00</updated><id>/[Reversing.Kr] Easy Crack me</id><content type="html" xml:base="/Reversing.Kr-Easy-Crack-me/">&lt;h3 id=&quot;easy_crackmeexe-실행화면&quot;&gt;Easy_CrackMe.exe 실행화면&lt;/h3&gt;
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;
 프로그램을 실행해보면 무언가 값을 입력 가능하고, 확인 버튼을 누르면 Incorrect Password라는 문구를 띄운다.&lt;br /&gt;아마도 이 문제의 정답은 저 패스워드를 구하는게 아닐까?&lt;br /&gt;바로 IDA로 열어보자.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -24,9 +24,9 @@ char v7;
 &lt;p&gt;v3가 97(ASCII로 a), v4가 변수 a5y, v5가 변수 aR3versing, String이 69(ASCII로 E)라는 조건을 가지고 있는 if문이다.
 &lt;br /&gt;
 그러면 a5y와 aR3versing에는 어떤 값이 저장되어있는지 확인해보자.&lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;../images/post1_ (3).png&quot; style=&quot;width:100%;&quot; /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/sqrtrev/sqrtrev.github.io/master/images/post1_%20(3).PNG&quot; style=&quot;width:100%;&quot; /&gt;
 aR3versing에는 R3versing이라는 값이, a5y에는 5y라는 값이 저장되어있다.&lt;br /&gt;
-위 내용을 기반으로 값들을 조합하면 Password가 나오게된다.
+위 내용을 기반으로 값들을 조합하면 Password가 나오게된다.&lt;br /&gt;
 &lt;img src=&quot;../images/post1_ (4).png&quot; style=&quot;width:100%&quot; /&gt;
 Clear!
 &lt;br /&gt;
