@@ -1,5 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-07-02T15:42:47+09:00</updated><id>/</id><title type="html">SQRTREV</title><subtitle>sqrtrev Github Page</subtitle><entry><title type="html">[Reversing.kr] Easy Crack</title><link href="/Reversing.Kr-Easy-Crack-me/" rel="alternate" type="text/html" title="[Reversing.kr] Easy Crack" /><published>2018-07-02T00:00:00+09:00</published><updated>2018-07-02T00:00:00+09:00</updated><id>/[Reversing.Kr] Easy Crack me</id><content type="html" xml:base="/Reversing.Kr-Easy-Crack-me/">&lt;h3 id=&quot;easy_crackmeexe-실행화면&quot;&gt;Easy_CrackMe.exe 실행화면&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-07-02T16:03:17+09:00</updated><id>/</id><title type="html">SQRTREV</title><subtitle>sqrtrev Github Page</subtitle><entry><title type="html">[Reversing.kr] Easy Crack</title><link href="/Reversing.Kr-Easy-Crack-me/" rel="alternate" type="text/html" title="[Reversing.kr] Easy Crack" /><published>2018-07-02T00:00:00+09:00</published><updated>2018-07-02T00:00:00+09:00</updated><id>/[Reversing.Kr] Easy Crack me</id><content type="html" xml:base="/Reversing.Kr-Easy-Crack-me/">&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;../images/post1_ (1).png&quot; /&gt;
+&lt;br /&gt;Easy_CrackMe.exe 실행화면
+&lt;br /&gt;&lt;br /&gt;
 프로그램을 실행해보면 무언가 값을 입력 가능하고, 확인 버튼을 누르면 Incorrect Password라는 문구를 띄운다.&lt;br /&gt;아마도 이 문제의 정답은 저 패스워드를 구하는게 아닐까?&lt;br /&gt;바로 IDA로 열어보자.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;../images/post1_ (2).png&quot; style=&quot;width:100%;&quot; /&gt;
@@ -27,7 +30,7 @@ char v7;
 &lt;img src=&quot;https://raw.githubusercontent.com/sqrtrev/sqrtrev.github.io/master/images/post1_%20(3).PNG&quot; style=&quot;width:100%;&quot; /&gt;
 aR3versing에는 R3versing이라는 값이, a5y에는 5y라는 값이 저장되어있다.&lt;br /&gt;
 위 내용을 기반으로 값들을 조합하면 Password가 나오게된다.&lt;br /&gt;
-&lt;img src=&quot;../images/post1_ (4).png&quot; style=&quot;width:100%&quot; /&gt;
+&lt;img src=&quot;../images/post1_ (4).png&quot; /&gt;&lt;br /&gt;
 Clear!
 &lt;br /&gt;
-키값은 따로 공유하지 않도록 하겠다.&lt;/p&gt;</content><summary type="html">Reversing.kr 1번</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/images/post1_ (1).png" /></entry></feed>
+키값은 따로 공유하지 않도록 하겠다.&lt;/p&gt;</content><summary type="html">Reversing.kr 1번</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/images/post1_ (2).png" /></entry></feed>
