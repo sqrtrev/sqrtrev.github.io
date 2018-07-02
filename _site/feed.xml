@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-07-02T16:03:17+09:00</updated><id>/</id><title type="html">SQRTREV</title><subtitle>sqrtrev Github Page</subtitle><entry><title type="html">[Reversing.kr] Easy Crack</title><link href="/Reversing.Kr-Easy-Crack-me/" rel="alternate" type="text/html" title="[Reversing.kr] Easy Crack" /><published>2018-07-02T00:00:00+09:00</published><updated>2018-07-02T00:00:00+09:00</updated><id>/[Reversing.Kr] Easy Crack me</id><content type="html" xml:base="/Reversing.Kr-Easy-Crack-me/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-07-02T20:35:24+09:00</updated><id>/</id><title type="html">SQRTREV</title><subtitle>sqrtrev Github Page</subtitle><entry><title type="html">[Reversing.kr] Easy Crack</title><link href="/Reversing.Kr-Easy-Crack-me/" rel="alternate" type="text/html" title="[Reversing.kr] Easy Crack" /><published>2018-07-02T00:00:00+09:00</published><updated>2018-07-02T00:00:00+09:00</updated><id>/[Reversing.Kr] Easy Crack me</id><content type="html" xml:base="/Reversing.Kr-Easy-Crack-me/">&lt;hr /&gt;
 
 &lt;p&gt;&lt;img src=&quot;../images/post1_ (1).png&quot; /&gt;
 &lt;br /&gt;Easy_CrackMe.exe 실행화면
@@ -18,7 +18,7 @@ __int16 v6;
 char v7;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;쉽게 말해서 스택을 표현하자면 아래와 같이 구성된다.&lt;br /&gt;
+&lt;p&gt;쉽게 말해서 메모리를 표현하자면 아래와 같다.&lt;br /&gt;
 &lt;code class=&quot;highlighter-rouge&quot;&gt;string | v3 | v4 | v5&lt;/code&gt;&lt;br /&gt;&lt;br /&gt;
 다음은 16번째 줄의 if문을 보자&lt;br /&gt;&lt;/p&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if ( v3 == 97 &amp;amp;&amp;amp; !strncmp(&amp;amp;v4, a5y, 2u) &amp;amp;&amp;amp; !strcmp(&amp;amp;v5, aR3versing) &amp;amp;&amp;amp; String == 69 )
