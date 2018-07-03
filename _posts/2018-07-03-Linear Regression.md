@@ -28,6 +28,10 @@ Dataset은 데이터 X = {x1,x2,..,xn}과 Y = {y1,y2,..,yn}을 말하는 것으�
 = Binary classification<br>
 ● 공부 시간에 따른 A,B...F 학점 매기기<br>
 = Multi-label classification<br>
+● 이메일에 들어가있는 단어들에 대해서 스팸 여부 확인<br>
+= Naive Bayes Classification (Thanks To hong9802)<br>
+*여담- Naive Bayes Classification도 추가해 달라는 홍현이의 말을 듣고 자료를 찾아보았다. Naive Bayes Classification는 베이즈의 정리를 이용하여, 분류하고자 하는 대상의 각 불류별 확률을 측정하여 확률이 큰 쪽으로 분류하는것이었다. 자세한 자료는 아래 링크를 참고하자.<br>
+http://bcho.tistory.com/1010
 <br>
 ## Hypothesis  & Cost function
 A.I를 공부하기에 앞서 가설(Hypothesis)과 비용 함수(Cost Function)에 대한 이해가 필요하다.<br>
@@ -36,7 +40,7 @@ Machine Learning은 주어진 데이터 X = {x1,x2,x3,..,xn}와 데이터에 대
 <br><br>
 Machine Learning에서 학습을 진행하기 위해서는 모델의 정확도를 측정하고, 예측 값(측정 값)과 실제 값 차이의 평균을 구해야 한다. 이것을 구하는 것이 Cost Function(Loss Function)이다.
 <br>
-Hypothesis를 함수 H(x)라고 하면, Linear Regression에서의 H(x)는 ```H(x) = Wx + b```가 된다.<br>
+Hypothesis를 함수 H(x)라고 하면, Linear Regression에서의 가장 기초적인 H(x)는 ```H(x) = Wx + b```가 된다.<br>
 Cost Function은 Loss Function이라고도 부르며, 실제 값과 Prediction(예측 값)과의 차이를 제곱하여 평균을 구한것이다(아래 이미지 참고).<br>
 <img src="../images/2/1.PNG" style="width:100%;"/><br>
 위 사진에서 m = 데이터 갯수를 나타낸다.<br>
