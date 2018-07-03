@@ -7,7 +7,7 @@ image: "/images/3/2.PNG"
 ---
 ## How to minimize the cost of Linear Regression
 Linear Regression의 Hypothesis를 H(x) = Wx라고 단순하게 표현한다고 하자, W를 x축, Cost를 Y축에 나타낸다면 아래와 같은 그래프가 만들어지게 된다.<br>
-<img src="../images/3/1.PNG" style="width:100%;" alt="그림1"/><br>
+<img src="https://github.com/sqrtrev/sqrtrev.github.io/blob/master/images/3/1.PNG?raw=true" style="width:100%;" alt="그림1"/><br>
 우리가 Cost를 최소화 시키기 위해서 Gradient Descent Algorithm을 사용할 것이며, 여기에는 미분이 사용된다.
 1. 초기 예상을 가지고 시작한다
 -특정한 좌표에서 시작
