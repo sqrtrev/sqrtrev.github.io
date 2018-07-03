@@ -38,8 +38,8 @@ Machine Learning에서 학습을 진행하기 위해서는 모델의 정확도�
 <br>
 Hypothesis를 함수 H(x)라고 하면, Linear Regression에서의 H(x)는 ```H(x) = Wx + b```가 된다.<br>
 Cost Function은 Loss Function이라고도 부르며, 실제 값과 Prediction(예측 값)과의 차이를 제곱하여 평균을 구한것이다(아래 이미지 참고).<br>
-<img src="../images/2/1.PNG" /><br>
+<img src="../images/2/1.PNG" style="width:100%;"/><br>
 위 사진에서 m = 데이터 갯수를 나타낸다.<br>
 함수 H(x)와 Cost함수를 합치면 아래와 같은 식이 나오게된다.<br>
-<img src="../images/2/2.PNG" /><br>
+<img src="../images/2/2.PNG" style="width:100%"/><br>
 즉, Linear Regression에서의 ML의 학습이란,  ```cost(W,b)```의 값을 가장 작게 만드는 W와 b를 찾는것이다.
