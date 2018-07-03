@@ -1,11 +1,53 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-07-02T20:35:24+09:00</updated><id>/</id><title type="html">SQRTREV</title><subtitle>sqrtrev Github Page</subtitle><entry><title type="html">[Reversing.kr] Easy Crack</title><link href="/Reversing.Kr-Easy-Crack-me/" rel="alternate" type="text/html" title="[Reversing.kr] Easy Crack" /><published>2018-07-02T00:00:00+09:00</published><updated>2018-07-02T00:00:00+09:00</updated><id>/[Reversing.Kr] Easy Crack me</id><content type="html" xml:base="/Reversing.Kr-Easy-Crack-me/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-07-03T19:59:30+09:00</updated><id>/</id><title type="html">SQRTREV</title><subtitle>sqrtrev Github Page</subtitle><entry><title type="html">[ML] Basic Terms and Notions</title><link href="/Linear-Regression/" rel="alternate" type="text/html" title="[ML] Basic Terms and Notions" /><published>2018-07-03T00:00:00+09:00</published><updated>2018-07-03T00:00:00+09:00</updated><id>/Linear Regression</id><content type="html" xml:base="/Linear-Regression/">&lt;hr /&gt;
 
-&lt;p&gt;&lt;img src=&quot;../images/post1_ (1).png&quot; /&gt;
+&lt;h2 id=&quot;supervised-or-unsupervised&quot;&gt;Supervised Or Unsupervised&lt;/h2&gt;
+&lt;p&gt;ML(Machine Learning)에는 두가지의 학습방법이 있다.&lt;br /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Supervised Learning&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Unsupervised Learning&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Supervised Learning은 고양이나 강아지와 같이 Label을 붙일수 있는 사진같은 것들을 학습시키는 것이다.&lt;br /&gt;
+반면, Label을 붙여줄 수 없는 것들(뉴스, 단어 등등)의 경우 데이터를 보고 스스로 유사한 것들끼리 분류하게 학습하는 것을 Unsupervised Learning이라 한다.&lt;br /&gt;
+Supervised Learning의 예시는 아래와 같다.&lt;br /&gt;
+● Image labeling(Label된 이미지들을 학습시켜 구분시키는 것)&lt;br /&gt;
+● Email spam filter(스팸으로 구분된 메일들을 학습시켜 스팸을 구분하는것)&lt;br /&gt;
+● Predicting exam score(여태까지의 시험점수와 공부에 사용한 시간을 학습시켜 점수를 예측시키는 것)
+&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;dataset&quot;&gt;Dataset&lt;/h2&gt;
+&lt;p&gt;Dataset은 데이터 X = {x1,x2,..,xn}과 Y = {y1,y2,..,yn}을 말하는 것으로, Dataset을 이용해 ML을 통해 Y에 최대한 Prediction을 가깝게 해주는데 사용한다. 쉽게 정리하자면, 학습시킬때 사용할 input과 output정도로 생각해주면 편하다.
+&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;types-of-supervised-learning&quot;&gt;Types of supervised learning&lt;/h2&gt;
+&lt;p&gt;● 공부 시간에 따른 시험점수 예측(0~100점)&lt;br /&gt;
+= Regression&lt;br /&gt;
+● 공부 시간에 따른 합격/불합격 여부&lt;br /&gt;
+= Binary classification&lt;br /&gt;
+● 공부 시간에 따른 A,B…F 학점 매기기&lt;br /&gt;
+= Multi-label classification&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;hypothesis---cost-function&quot;&gt;Hypothesis  &amp;amp; Cost function&lt;/h2&gt;
+&lt;p&gt;A.I를 공부하기에 앞서 가설(Hypothesis)과 비용 함수(Cost Function)에 대한 이해가 필요하다.&lt;br /&gt;
+Machine Learning은 주어진 데이터 X = {x1,x2,x3,..,xn}와 데이터에 대응하는 실제 현상 Y = {y1,y2,..,yn}에 대한 관계함수 f를 찾는 과정이다. 정확한 함수 f를 찾기 위해 Maching Learning 알고리즘들은 데이터에 대한 가정을 하고, 그 가정에 따라 주어진 데이터를 최대한 잘 설명할 수 있는 함수 &lt;code class=&quot;highlighter-rouge&quot;&gt;f′&lt;/code&gt;을 찾고, 이 &lt;code class=&quot;highlighter-rouge&quot;&gt;f′&lt;/code&gt;을 Hypothesis라고 한다.&lt;br /&gt;
+(Hypothesis에 대한 설명 출처: http://sanghyukchun.github.io/57/)
+&lt;br /&gt;&lt;br /&gt;
+Machine Learning에서 학습을 진행하기 위해서는 모델의 정확도를 측정하고, 예측 값(측정 값)과 실제 값 차이의 평균을 구해야 한다. 이것을 구하는 것이 Cost Function(Loss Function)이다.
+&lt;br /&gt;
+Hypothesis를 함수 H(x)라고 하면, Linear Regression에서의 H(x)는 &lt;code class=&quot;highlighter-rouge&quot;&gt;H(x) = Wx + b&lt;/code&gt;가 된다.&lt;br /&gt;
+Cost Function은 Loss Function이라고도 부르며, 실제 값과 Prediction(예측 값)과의 차이를 제곱하여 평균을 구한것이다(아래 이미지 참고).&lt;br /&gt;
+&lt;img src=&quot;../images/2/1.PNG&quot; /&gt;&lt;br /&gt;
+위 사진에서 m = 데이터 갯수를 나타낸다.&lt;br /&gt;
+함수 H(x)와 Cost함수를 합치면 아래와 같은 식이 나오게된다.&lt;br /&gt;
+&lt;img src=&quot;../images/2/2.PNG&quot; /&gt;&lt;br /&gt;
+즉, Linear Regression에서의 ML의 학습이란,  &lt;code class=&quot;highlighter-rouge&quot;&gt;cost(W,b)&lt;/code&gt;의 값을 가장 작게 만드는 W와 b를 찾는것이다.&lt;/p&gt;</content><summary type="html">기본적인 Machine Learning의 용어 및 개념</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/images/2/2.PNG" /></entry><entry><title type="html">[Reversing.kr] Easy Crack</title><link href="/Reversing.Kr-Easy-Crack-me/" rel="alternate" type="text/html" title="[Reversing.kr] Easy Crack" /><published>2018-07-02T00:00:00+09:00</published><updated>2018-07-02T00:00:00+09:00</updated><id>/[Reversing.Kr] Easy Crack me</id><content type="html" xml:base="/Reversing.Kr-Easy-Crack-me/">&lt;hr /&gt;
+
+&lt;p&gt;사실 reversing.kr은 KH2RS라는 닉네임으로 여러문제를 풀었던 적이 있다. &lt;br /&gt;하지만 블로그를 새롭게 만들면서 다시 풀어보자는 생각으로 sqrtrev라는 닉네임으로 다시 계정을 만들었다.
+&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;../images/1/post1_ (1).png&quot; /&gt;
 &lt;br /&gt;Easy_CrackMe.exe 실행화면
 &lt;br /&gt;&lt;br /&gt;
 프로그램을 실행해보면 무언가 값을 입력 가능하고, 확인 버튼을 누르면 Incorrect Password라는 문구를 띄운다.&lt;br /&gt;아마도 이 문제의 정답은 저 패스워드를 구하는게 아닐까?&lt;br /&gt;바로 IDA로 열어보자.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;../images/post1_ (2).png&quot; style=&quot;width:100%;&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;../images/1/post1_ (2).png&quot; style=&quot;width:100%;&quot; /&gt;
 &lt;br /&gt;
 sub_401080을 열어보면 아래와 같이 변수가 선언되어있다.
 &lt;br /&gt;&lt;/p&gt;
@@ -27,10 +69,10 @@ char v7;
 &lt;p&gt;v3가 97(ASCII로 a), v4가 변수 a5y, v5가 변수 aR3versing, String이 69(ASCII로 E)라는 조건을 가지고 있는 if문이다.
 &lt;br /&gt;
 그러면 a5y와 aR3versing에는 어떤 값이 저장되어있는지 확인해보자.&lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/sqrtrev/sqrtrev.github.io/master/images/post1_%20(3).PNG&quot; style=&quot;width:100%;&quot; /&gt;
+&lt;img src=&quot;../images/1/post1_ (3).PNG&quot; style=&quot;width:100%;&quot; /&gt;
 aR3versing에는 R3versing이라는 값이, a5y에는 5y라는 값이 저장되어있다.&lt;br /&gt;
 위 내용을 기반으로 값들을 조합하면 Password가 나오게된다.&lt;br /&gt;
-&lt;img src=&quot;../images/post1_ (4).png&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;../images/1/post1_ (4).png&quot; /&gt;&lt;br /&gt;
 Clear!
 &lt;br /&gt;
-키값은 따로 공유하지 않도록 하겠다.&lt;/p&gt;</content><summary type="html">Reversing.kr 1번</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/images/post1_ (2).png" /></entry></feed>
+키값은 따로 공유하지 않도록 하겠다.&lt;/p&gt;</content><summary type="html">Reversing.kr 1번</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/images/1/post1_ (2).png" /></entry></feed>

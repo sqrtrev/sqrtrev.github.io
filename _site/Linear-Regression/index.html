@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-<title>[Reversing.kr] Easy Crack</title>
+<title>[ML] Basic Terms and Notions</title>
 <meta name="description" content="">
 
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
@@ -59,52 +59,55 @@
 				<div id="main">
           <section class="post">
     				<header class="major">
-      				<span class="date">02 Jul 2018</span>
-      				<h1>[Reversing.kr] Easy Crack</h1>
-      				<p>Reversing.kr 1번</p>
+      				<span class="date">03 Jul 2018</span>
+      				<h1>[ML] Basic Terms and Notions</h1>
+      				<p>기본적인 Machine Learning의 용어 및 개념</p>
       			</header>
-      			<div class="image main"><img src="/images/1/post1_%20(2).png" alt=""></div>
+      			<div class="image main"><img src="/images/2/2.PNG" alt=""></div>
       			<p></p>
 <hr>
 
-<p>사실 reversing.kr은 KH2RS라는 닉네임으로 여러문제를 풀었던 적이 있다. <br>하지만 블로그를 새롭게 만들면서 다시 풀어보자는 생각으로 sqrtrev라는 닉네임으로 다시 계정을 만들었다.
-<br><br>
-<img src="../images/1/post1_%20(1).png">
-<br>Easy_CrackMe.exe 실행화면
-<br><br>
-프로그램을 실행해보면 무언가 값을 입력 가능하고, 확인 버튼을 누르면 Incorrect Password라는 문구를 띄운다.<br>아마도 이 문제의 정답은 저 패스워드를 구하는게 아닐까?<br>바로 IDA로 열어보자.<br><br></p>
+<h2 id="supervised-or-unsupervised">Supervised Or Unsupervised</h2>
+<p>ML(Machine Learning)에는 두가지의 학습방법이 있다.<br></p>
+<ol>
+  <li>Supervised Learning<br>
+</li>
+  <li>Unsupervised Learning<br>
+</li>
+</ol>
 
-<p><img src="../images/1/post1_%20(2).png" style="width:100%;">
-<br>
-sub_401080을 열어보면 아래와 같이 변수가 선언되어있다.
+<p>Supervised Learning은 고양이나 강아지와 같이 Label을 붙일수 있는 사진같은 것들을 학습시키는 것이다.<br>
+반면, Label을 붙여줄 수 없는 것들(뉴스, 단어 등등)의 경우 데이터를 보고 스스로 유사한 것들끼리 분류하게 학습하는 것을 Unsupervised Learning이라 한다.<br>
+Supervised Learning의 예시는 아래와 같다.<br>
+● Image labeling(Label된 이미지들을 학습시켜 구분시키는 것)<br>
+● Email spam filter(스팸으로 구분된 메일들을 학습시켜 스팸을 구분하는것)<br>
+● Predicting exam score(여태까지의 시험점수와 공부에 사용한 시간을 학습시켜 점수를 예측시키는 것)
 <br></p>
-<div class="highlighter-rouge">
-<pre class="highlight"><code>int result;
-CHAR String; // [sp+4h]
-char v3; // [sp+5h]
-char v4; // [sp+6h]
-char v5; // [sp+8h]
-__int16 v6;
-char v7;
-</code></pre>
-</div>
-<p>쉽게 말해서 메모리를 표현하자면 아래와 같다.<br>
-<code class="highlighter-rouge">string | v3 | v4 | v5</code><br><br>
-다음은 16번째 줄의 if문을 보자<br></p>
-<div class="highlighter-rouge">
-<pre class="highlight"><code>if ( v3 == 97 &amp;&amp; !strncmp(&amp;v4, a5y, 2u) &amp;&amp; !strcmp(&amp;v5, aR3versing) &amp;&amp; String == 69 )
-</code></pre>
-</div>
-<p>v3가 97(ASCII로 a), v4가 변수 a5y, v5가 변수 aR3versing, String이 69(ASCII로 E)라는 조건을 가지고 있는 if문이다.
+<h2 id="dataset">Dataset</h2>
+<p>Dataset은 데이터 X = {x1,x2,..,xn}과 Y = {y1,y2,..,yn}을 말하는 것으로, Dataset을 이용해 ML을 통해 Y에 최대한 Prediction을 가깝게 해주는데 사용한다. 쉽게 정리하자면, 학습시킬때 사용할 input과 output정도로 생각해주면 편하다.
+<br></p>
+<h2 id="types-of-supervised-learning">Types of supervised learning</h2>
+<p>● 공부 시간에 따른 시험점수 예측(0~100점)<br>
+= Regression<br>
+● 공부 시간에 따른 합격/불합격 여부<br>
+= Binary classification<br>
+● 공부 시간에 따른 A,B…F 학점 매기기<br>
+= Multi-label classification<br>
+<br></p>
+<h2 id="hypothesis---cost-function">Hypothesis  &amp; Cost function</h2>
+<p>A.I를 공부하기에 앞서 가설(Hypothesis)과 비용 함수(Cost Function)에 대한 이해가 필요하다.<br>
+Machine Learning은 주어진 데이터 X = {x1,x2,x3,..,xn}와 데이터에 대응하는 실제 현상 Y = {y1,y2,..,yn}에 대한 관계함수 f를 찾는 과정이다. 정확한 함수 f를 찾기 위해 Maching Learning 알고리즘들은 데이터에 대한 가정을 하고, 그 가정에 따라 주어진 데이터를 최대한 잘 설명할 수 있는 함수 <code class="highlighter-rouge">f′</code>을 찾고, 이 <code class="highlighter-rouge">f′</code>을 Hypothesis라고 한다.<br>
+(Hypothesis에 대한 설명 출처: http://sanghyukchun.github.io/57/)
+<br><br>
+Machine Learning에서 학습을 진행하기 위해서는 모델의 정확도를 측정하고, 예측 값(측정 값)과 실제 값 차이의 평균을 구해야 한다. 이것을 구하는 것이 Cost Function(Loss Function)이다.
 <br>
-그러면 a5y와 aR3versing에는 어떤 값이 저장되어있는지 확인해보자.<br><br>
-<img src="../images/1/post1_%20(3).PNG" style="width:100%;">
-aR3versing에는 R3versing이라는 값이, a5y에는 5y라는 값이 저장되어있다.<br>
-위 내용을 기반으로 값들을 조합하면 Password가 나오게된다.<br>
-<img src="../images/1/post1_%20(4).png"><br>
-Clear!
-<br>
-키값은 따로 공유하지 않도록 하겠다.</p>
+Hypothesis를 함수 H(x)라고 하면, Linear Regression에서의 H(x)는 <code class="highlighter-rouge">H(x) = Wx + b</code>가 된다.<br>
+Cost Function은 Loss Function이라고도 부르며, 실제 값과 Prediction(예측 값)과의 차이를 제곱하여 평균을 구한것이다(아래 이미지 참고).<br>
+<img src="../images/2/1.PNG"><br>
+위 사진에서 m = 데이터 갯수를 나타낸다.<br>
+함수 H(x)와 Cost함수를 합치면 아래와 같은 식이 나오게된다.<br>
+<img src="../images/2/2.PNG"><br>
+즉, Linear Regression에서의 ML의 학습이란,  <code class="highlighter-rouge">cost(W,b)</code>의 값을 가장 작게 만드는 W와 b를 찾는것이다.</p>
 
       		</section>
 
@@ -117,8 +120,8 @@ Clear!
                */
 
               var disqus_config = function () {
-                  this.page.url = 'https://sqrtrev.github.io/Reversing.Kr-Easy-Crack-me/';  /*Replace PAGE_URL with your page's canonical URL variable*/
-                  this.page.identifier = '/Reversing.Kr-Easy-Crack-me/'; /*Replace PAGE_IDENTIFIER with your page's unique identifier variable*/
+                  this.page.url = 'https://sqrtrev.github.io/Linear-Regression/';  /*Replace PAGE_URL with your page's canonical URL variable*/
+                  this.page.identifier = '/Linear-Regression/'; /*Replace PAGE_IDENTIFIER with your page's unique identifier variable*/
               };
 
               (function() {  /* dont endit below this line */
