@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[ML] Minimize cost"
-date:   2018-07-03
+date:   2018-07-04
 excerpt: "Linear Regression의 Cost 최소화 알고리즘 원리"
 image: "/images/3/2.PNG"
 ---
