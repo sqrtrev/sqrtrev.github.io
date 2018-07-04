@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-07-03T19:59:30+09:00</updated><id>/</id><title type="html">SQRTREV</title><subtitle>sqrtrev Github Page</subtitle><entry><title type="html">[ML] Basic Terms and Notions</title><link href="/Linear-Regression/" rel="alternate" type="text/html" title="[ML] Basic Terms and Notions" /><published>2018-07-03T00:00:00+09:00</published><updated>2018-07-03T00:00:00+09:00</updated><id>/Linear Regression</id><content type="html" xml:base="/Linear-Regression/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-07-03T23:01:52+09:00</updated><id>/</id><title type="html">SQRTREV</title><subtitle>sqrtrev Github Page</subtitle><entry><title type="html">[ML] Minimize cost</title><link href="/minimize-cost/" rel="alternate" type="text/html" title="[ML] Minimize cost" /><published>2018-07-03T00:00:00+09:00</published><updated>2018-07-03T00:00:00+09:00</updated><id>/minimize cost</id><content type="html" xml:base="/minimize-cost/">&lt;h2 id=&quot;how-to-minimize-the-cost-of-linear-regression&quot;&gt;How to minimize the cost of Linear Regression&lt;/h2&gt;
+&lt;p&gt;Linear Regression의 Hypothesis를 &lt;code class=&quot;highlighter-rouge&quot;&gt;H(x) = Wx&lt;/code&gt;라고 단순하게 표현한다고 하자, W를 x축, Cost를 Y축에 나타낸다면 아래와 같은 그래프가 만들어지게 된다.&lt;br /&gt;
+&lt;img src=&quot;../images/3/1.PNG&quot; style=&quot;width:100%;&quot; alt=&quot;그림1&quot; /&gt;&lt;br /&gt;
+우리가 Cost를 최소화 시키기 위해서 Gradient Descent Algorithm을 사용할 것이며, 여기에는 미분이 사용된다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;특정 좌표에서 시작한다&lt;br /&gt;
+-Weight 값을 계속 변화시키며, bias를 아주 약간 다르게하여 cost(W,b)를 감소시킨다.&lt;/li&gt;
+  &lt;li&gt;파라미터의 값을 변화시킬 때 마다, cost(W,b)를 가능한 가장 많이 줄여주는 순간기울기를 선택한다.&lt;/li&gt;
+  &lt;li&gt;최솟값으로 모일때까지 반복한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;../images/3/2.PNG&quot; style=&quot;width:100%;&quot; /&gt;&lt;br /&gt;
+위 이미지가 미분한 결과이다. 이미지에서 알파(a)는 Learning Rate를 의미하며, 나중에 문서에서 설명하도록 하겠다.&lt;br /&gt;&lt;br /&gt;그림1을 보면 최적의 W는 1이다. 만약 우리가 위 공식을 이용해서 최적의 1의 값을 찾는다고 하면, W가 4.0에서 시작했다면 W의 값이 왼쪽(감소)으로 가야한다. 이 과정의 반복을 통해 최적의 W를 찾아낼 수 있는 것이다!&lt;br /&gt;&lt;br /&gt;이처럼 W를 다시 찾는다고 하면 어느 방향으로 이동하는지가 중요한 관건이지만, Tensorflow에서는 함수가 알아서 편리하게 계산해준다 XD.&lt;br /&gt;
+여튼 요약하자면 공식은 아래와 같이 정리된다&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;W = W - learning_rate * 순간기울기&lt;/code&gt;&lt;br /&gt;
+추가로 Convex Function도 확인하고 사용해줘야 한다.&lt;br /&gt;
+&lt;img src=&quot;../images/3/3.PNG&quot; style=&quot;width:100%;&quot; /&gt;&lt;br /&gt;
+이미지 출처: http://www.holehouse.org/mlclass
+&lt;br /&gt;
+위 이미지가 Convex Function이라는 것인데, X축은 W, Y축은 b, Z축은 cost를 나타내는 것이다. 위에서 보면 두개의 다른 좌표에서 시작하여 Gradient Descent Alogorithm을 실행 했지만, 다른 좌표에 도착한게 된다. 따라서 정확한 값을 얻지 못한다는 말이다.&lt;br /&gt;
+&lt;img src=&quot;../images/3/4.PNG&quot; style=&quot;width:100%;&quot; /&gt;&lt;br /&gt;
+이미지 출처: http://www.holehouse.org/mlclass&lt;br /&gt;
+위에서 보이는 그림이 바람직한 Convex Function의 그림이다.&lt;/p&gt;</content><summary type="html">Linear Regression의 Cost 최소화 알고리즘 원리</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/images/3/2.PNG" /></entry><entry><title type="html">[ML] Basic Terms and Notions</title><link href="/Linear-Regression/" rel="alternate" type="text/html" title="[ML] Basic Terms and Notions" /><published>2018-07-03T00:00:00+09:00</published><updated>2018-07-03T00:00:00+09:00</updated><id>/Linear Regression</id><content type="html" xml:base="/Linear-Regression/">&lt;hr /&gt;
 
 &lt;h2 id=&quot;supervised-or-unsupervised&quot;&gt;Supervised Or Unsupervised&lt;/h2&gt;
 &lt;p&gt;ML(Machine Learning)에는 두가지의 학습방법이 있다.&lt;br /&gt;&lt;/p&gt;
@@ -24,6 +46,10 @@ Supervised Learning의 예시는 아래와 같다.&lt;br /&gt;
 = Binary classification&lt;br /&gt;
 ● 공부 시간에 따른 A,B…F 학점 매기기&lt;br /&gt;
 = Multi-label classification&lt;br /&gt;
+● 이메일에 들어가있는 단어들에 대해서 스팸 여부 확인&lt;br /&gt;
+= Naive Bayes Classification (Thanks To hong9802)&lt;br /&gt;
+*여담 - Naive Bayes Classification도 추가해 달라는 홍현이의 말을 듣고 자료를 찾아보았다. Naive Bayes Classification는 베이즈의 정리를 이용하여, 분류하고자 하는 대상의 각 분류별 확률을 측정하여 확률이 큰 쪽으로 분류하는것이었다. 자세한 자료는 아래 링크를 참고하자.&lt;br /&gt;
+http://bcho.tistory.com/1010
 &lt;br /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;hypothesis---cost-function&quot;&gt;Hypothesis  &amp;amp; Cost function&lt;/h2&gt;
 &lt;p&gt;A.I를 공부하기에 앞서 가설(Hypothesis)과 비용 함수(Cost Function)에 대한 이해가 필요하다.&lt;br /&gt;
@@ -32,12 +58,12 @@ Machine Learning은 주어진 데이터 X = {x1,x2,x3,..,xn}와 데이터에 대
 &lt;br /&gt;&lt;br /&gt;
 Machine Learning에서 학습을 진행하기 위해서는 모델의 정확도를 측정하고, 예측 값(측정 값)과 실제 값 차이의 평균을 구해야 한다. 이것을 구하는 것이 Cost Function(Loss Function)이다.
 &lt;br /&gt;
-Hypothesis를 함수 H(x)라고 하면, Linear Regression에서의 H(x)는 &lt;code class=&quot;highlighter-rouge&quot;&gt;H(x) = Wx + b&lt;/code&gt;가 된다.&lt;br /&gt;
+Hypothesis를 함수 H(x)라고 하면, Linear Regression에서의 가장 기초적인 H(x)는 &lt;code class=&quot;highlighter-rouge&quot;&gt;H(x) = Wx + b&lt;/code&gt;가 된다.&lt;br /&gt;
 Cost Function은 Loss Function이라고도 부르며, 실제 값과 Prediction(예측 값)과의 차이를 제곱하여 평균을 구한것이다(아래 이미지 참고).&lt;br /&gt;
-&lt;img src=&quot;../images/2/1.PNG&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;../images/2/1.PNG&quot; style=&quot;width:100%;&quot; /&gt;&lt;br /&gt;
 위 사진에서 m = 데이터 갯수를 나타낸다.&lt;br /&gt;
 함수 H(x)와 Cost함수를 합치면 아래와 같은 식이 나오게된다.&lt;br /&gt;
-&lt;img src=&quot;../images/2/2.PNG&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;../images/2/2.PNG&quot; style=&quot;width:100%&quot; /&gt;&lt;br /&gt;
 즉, Linear Regression에서의 ML의 학습이란,  &lt;code class=&quot;highlighter-rouge&quot;&gt;cost(W,b)&lt;/code&gt;의 값을 가장 작게 만드는 W와 b를 찾는것이다.&lt;/p&gt;</content><summary type="html">기본적인 Machine Learning의 용어 및 개념</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/images/2/2.PNG" /></entry><entry><title type="html">[Reversing.kr] Easy Crack</title><link href="/Reversing.Kr-Easy-Crack-me/" rel="alternate" type="text/html" title="[Reversing.kr] Easy Crack" /><published>2018-07-02T00:00:00+09:00</published><updated>2018-07-02T00:00:00+09:00</updated><id>/[Reversing.Kr] Easy Crack me</id><content type="html" xml:base="/Reversing.Kr-Easy-Crack-me/">&lt;hr /&gt;
 
 &lt;p&gt;사실 reversing.kr은 KH2RS라는 닉네임으로 여러문제를 풀었던 적이 있다. &lt;br /&gt;하지만 블로그를 새롭게 만들면서 다시 풀어보자는 생각으로 sqrtrev라는 닉네임으로 다시 계정을 만들었다.

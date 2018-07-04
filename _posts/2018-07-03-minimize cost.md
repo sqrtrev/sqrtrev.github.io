@@ -22,7 +22,7 @@ Linear Regression의 Hypothesis를 ```H(x) = Wx```라고 단순하게 표현한�
 <img src="../images/3/3.PNG" style="width:100%;" /><br>
 이미지 출처: http://www.holehouse.org/mlclass
 <br>
-위 이미지가 Convex Function이라는 것인데, X축은 W, Y축은 b, Z축은 cost를 나타내는 것이다. 위에서 보면 두개의 다른 좌표에서 시작하여 Gradient Descent Alogorithm을 실행 했지만, 다른 좌표에 도착한게 된다. 따라서 정확한 값을 얻지 못한다는 말이다.<br>
+위 이미지가 Convex Function이라는 것인데, X축은 W, Y축은 b, Z축은 cost를 나타내는 것이다. 위에서 보면 두개의 다른 좌표에서 시작하여 Gradient Descent Algorithm을 실행 했지만, 다른 좌표에 도착한게 된다. 따라서 정확한 값을 얻지 못한다는 말이다.<br>
 <img src="../images/3/4.PNG" style="width:100%;" /><br>
 이미지 출처: http://www.holehouse.org/mlclass<br>
 위에서 보이는 그림이 바람직한 Convex Function의 그림이다.
