@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-<title>[ML] Minimize cost</title>
+<title>[ML] Tensorflow에서의 함수들 정리</title>
 <meta name="description" content="">
 
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
@@ -59,35 +59,38 @@
 				<div id="main">
           <section class="post">
     				<header class="major">
-      				<span class="date">04 Jul 2018</span>
-      				<h1>[ML] Minimize cost</h1>
-      				<p>Linear Regression의 Cost 최소화 알고리즘 원리</p>
+      				<span class="date">05 Jul 2018</span>
+      				<h1>[ML] Tensorflow에서의 함수들 정리</h1>
+      				<p>Tensorflow의 API를 파헤쳐보자</p>
       			</header>
-      			<div class="image main"><img src="/images/3/2.PNG" alt=""></div>
+      			<div class="image main"><img src="/images/4/2.PNG" alt=""></div>
       			<p></p>
-<h2 id="how-to-minimize-the-cost-of-linear-regression">How to minimize the cost of Linear Regression</h2>
-<p>Linear Regression의 Hypothesis를 <code class="highlighter-rouge">H(x) = Wx</code>라고 단순하게 표현한다고 하자, W를 x축, Cost를 Y축에 나타낸다면 아래와 같은 그래프가 만들어지게 된다.<br>
-<img src="../images/3/1.PNG" style="width:100%;" alt="그림1"><br>
-우리가 Cost를 최소화 시키기 위해서 Gradient Descent Algorithm을 사용할 것이며, 여기에는 미분이 사용된다.</p>
+<hr>
+
+<h2 id="tensorflow-주요-함수-정리">Tensorflow 주요 함수 정리</h2>
+<ul>
+  <li>본 포스팅은 Tensorflow API r1.8를 기준으로 작성되었습니다.</li>
+  <li>
+<code class="highlighter-rouge">import tensorflow as tf</code> 즉, tf에 tensorflow를 import했다는 가정에서 설명하겠습니다.</li>
+  <li>지속적으로 업데이트할 문서입니다. 첫 게시일은 18/07/05 입니다.</li>
+</ul>
+
 <ol>
-  <li>특정 좌표에서 시작한다<br>
--Weight 값을 계속 변화시키며, bias를 아주 약간 다르게하여 cost(W,b)를 감소시킨다.</li>
-  <li>파라미터의 값을 변화시킬 때 마다, cost(W,b)를 가능한 가장 많이 줄여주는 순간기울기를 선택한다.</li>
-  <li>최솟값으로 모일때까지 반복한다.</li>
+  <li>tf.Variable()<br>
+Tensorflow에서 변수를 생성할때 사용하는 함수.<br><br>
+공식 API에서 설명하는 함수는 아래와 같다.<br>
+<img src="../images/4/3.PNG" style="width:100%;"><br><br>
+“Variable()은 변수에 사용할 초기값을 요구합니다. 이 변수는 텐서의 어떤 타입이나 형태가 될수있습니다. 초기값은 변수의 형태와 타입을 정의합니다. 해당 함수를 사용한후, 변수의 타입과 형태는 고정됩니다. 이 값은 assign메서드를 사용해서 변경가능합니다.<br><br>만약 나중에 변수의 형태를 바꾸고싶다면, <code class="highlighter-rouge">validate_shape=False</code>와 <code class="highlighter-rouge">assign</code> Op를 사용해야합니다.<br><br><code class="highlighter-rouge">Tensor</code>나<code class="highlighter-rouge">Variable()</code>로 생성된 것들은 그래프에서 다른 Op의 input으로 사용할 수 있습니다. 추가로, <code class="highlighter-rouge">Tensor</code>class로 오버로드 되는 모든 Operator들은 변수로 넘겨집니다. 그래서 변수의 산술연산만으로 그래프에 노드를 추가할 수 있습니다.”<br><br>
+<code class="highlighter-rouge">w = tf.Variable(&lt;initial-value&gt;, name=&lt;optional-name&gt;</code><br>
+tf.Variable(초기값, name="optional name")<br>
+name은 말그대로 optional한 부분이기 때문에 굳이 적어주지 않아도 된다.<br>
+<img src="../images/4/4.PNG" style="width:100%;"><br>
+공식 API에서는 그래프를 실행할 때, 변수는 그 값을 사용하는 ops를 실행하기 전에 명시적으로 초기화해야 한다고 적혀있다. 그래서 위의 이미지와 같이 모든 변수를 초기화 할 그래프에 <code class="highlighter-rouge">initialize_all_variables()</code>로 Op를 추가한다. 그후 그래프를 실행하고 Op를 실행한다.</li>
 </ol>
 
-<p><img src="../images/3/2.PNG" style="width:100%;"><br>
-위 이미지가 미분한 결과이다. 이미지에서 알파(a)는 Learning Rate를 의미하며, 나중에 문서에서 설명하도록 하겠다.<br><br>그림1을 보면 최적의 W는 1이다. 만약 우리가 위 공식을 이용해서 최적의 1의 값을 찾는다고 하면, W가 4.0에서 시작했다면 W의 값이 왼쪽(감소)으로 가야한다. 이 과정의 반복을 통해 최적의 W를 찾아낼 수 있는 것이다!<br><br>이처럼 W를 다시 찾는다고 하면 어느 방향으로 이동하는지가 중요한 관건이지만, Tensorflow에서는 함수가 알아서 편리하게 계산해준다 XD.<br>
-여튼 요약하자면 공식은 아래와 같이 정리된다<br>
-<code class="highlighter-rouge">W = W - learning_rate * 순간기울기</code><br>
-추가로 Convex Function도 확인하고 사용해줘야 한다.<br>
-<img src="../images/3/3.PNG" style="width:100%;"><br>
-이미지 출처: http://www.holehouse.org/mlclass
-<br>
-위 이미지가 Convex Function이라는 것인데, X축은 W, Y축은 b, Z축은 cost를 나타내는 것이다. 위에서 보면 두개의 다른 좌표에서 시작하여 Gradient Descent Algorithm을 실행 했지만, 다른 좌표에 도착한게 된다. 따라서 정확한 값을 얻지 못한다는 말이다.<br>
-<img src="../images/3/4.PNG" style="width:100%;"><br>
-이미지 출처: http://www.holehouse.org/mlclass<br>
-위에서 보이는 그림이 바람직한 Convex Function의 그림이다.</p>
+<h6 id="api문서-해석하고-찾아보니까-해석본이-이미-있었다">API문서 해석하고 찾아보니까 해석본이 이미 있었다.</h6>
+<p>######—- 18.07.05 까지 내용 —-</p>
+
 
       		</section>
 
@@ -100,8 +103,8 @@
                */
 
               var disqus_config = function () {
-                  this.page.url = 'https://sqrtrev.github.io/minimize-cost/';  /*Replace PAGE_URL with your page's canonical URL variable*/
-                  this.page.identifier = '/minimize-cost/'; /*Replace PAGE_IDENTIFIER with your page's unique identifier variable*/
+                  this.page.url = 'https://sqrtrev.github.io/Tensorflow-Functions/';  /*Replace PAGE_URL with your page's canonical URL variable*/
+                  this.page.identifier = '/Tensorflow-Functions/'; /*Replace PAGE_IDENTIFIER with your page's unique identifier variable*/
               };
 
               (function() {  /* dont endit below this line */
