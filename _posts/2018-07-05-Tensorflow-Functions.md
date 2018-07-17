@@ -9,7 +9,9 @@ image: "/images/4/2.PNG"
 ## Tensorflow 주요 함수 정리
 * 본 포스팅은 Tensorflow API r1.8를 기준으로 작성되었습니다.
 * ```import tensorflow as tf``` 즉, tf에 tensorflow를 import했다는 가정에서 설명하겠습니다.
-* 지속적으로 업데이트할 문서입니다. 첫 게시일은 18/07/05 입니다.
+* 이미 번역된 문서가 있기에 이 프로젝트(문서)는 동결되었습니다.
+* 이후 글들은 Keras위주(Backend: Tensorflow)로 작성하겠습니다
+* 컴퓨터의 성능문제로 머신러닝 도중 커널이 다운되서 딥러닝용 데스크탑을 새로 맞췄습니다. 다음글은 셋팅이 끝난뒤에 포스팅하겠습니다.
 
 
 1. tf.Variable()<br>
