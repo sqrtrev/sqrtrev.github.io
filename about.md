@@ -8,7 +8,7 @@ sitemap:
     changefreq: monthly
 ---
 # SeungHyun Kim
-### as known as sqrtrev
+### also known as sqrtrev
 <hr/>
 ## Experience
 ### 2018 ~
